@@ -10,7 +10,7 @@ async function contagem_regressiva() {
     }
     display.innerText = "Lançamento realizado!";
     await esperar(3000);
-    display.remove("contador");
+    display.innerText = ""
 }
 
 function esperar(ms) {
