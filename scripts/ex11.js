@@ -1,4 +1,4 @@
-function desconto_simples () {
+function desconto_variado () {
 
     let funcionario = prompt("Digite o nome do funcionário:");
         if (funcionario === null) {
@@ -20,12 +20,22 @@ function desconto_simples () {
             alert("Por Favor, digite um valor válido.");
         }
 
-    let desconto = (bruto * 8) / 100; 
+    let porcento = 0;
+        if (bruto <= 1000) {
+            porcento = 8;
+        } else if (bruto <= 1500) {
+            porcento = 8.5;
+        } else {
+            porcento = 9;
+        }
+
+    let desconto = (bruto * porcento) / 100; 
     let liquido = bruto - desconto;
 
     alert("Nome: " + nome);
     alert("Salário bruto: R$ " + bruto);
+    alert("Taxa de desconto: " + porcento + "%");
     alert("Desconto aplicado: R$ " + desconto);
     alert("Salário líquido: R$ " + liquido);
-    
+
 }
